@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: Montserrat, Arial, sans-serif;
+  color: #2e2f42;
+  background-color: #ffffff;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 36px;
+  margin-bottom: 32px;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.loader-wrapper.is-hidden {
+  display: none;
+}
+
+.loader {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 42px;
+  justify-content: center;
+}
+
+.gallery-item {
+  flex: 0 1 252px;
+  height: 200px;
+  border: 1px solid #808080;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.gallery-link {
+  position: relative;
+  display: block;
+  height: 100%;
+  color: #2e2f42;
+  text-decoration: none;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-list {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 4px 8px;
+  background-color: #ffffff;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.info-label {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.33;
+  color: #2e2f42;
+}
+
+.info-value {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search-form {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .gallery {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .gallery-item {
+    flex-basis: 100%;
+  }
+
+  .info-list {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
